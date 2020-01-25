@@ -17,3 +17,8 @@
 ```js
 constructor(({ birthDate, nickname } = {}));
 ```
+
+- fix issue with birthdate creation. We don't need the birthday created when the dragon class i loaded. We need the birthdate created in the constructor.
+  WE build a getter
+  get birthdate()
+  and every time .birthdate is called the date is created in the right place.
