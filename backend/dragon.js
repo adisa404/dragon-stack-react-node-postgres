@@ -1,5 +1,5 @@
 class Dragon {
-  constructor(birthDate, nickname) {
+  constructor({ birthDate, nickname }) {
     this.birthDate = birthDate;
     this.nickname = nickname;
   }
