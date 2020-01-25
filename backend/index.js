@@ -6,4 +6,7 @@ const dragon = new Dragon({
   nickname: 'Disa',
 });
 
+const dragon2 = new Dragon();
+
 console.log(dragon);
+console.log(dragon2);
