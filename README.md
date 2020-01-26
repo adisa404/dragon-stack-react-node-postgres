@@ -51,3 +51,14 @@ npm run dev // will watch the changes
 type of properties
 type: backgroundColor:
 value: aray of background colors
+
+# dragon properties - generation
+
+- generation of a dragon will go in a separate file
+- create config.js
+
+# generation class
+
+- set expiration date, but not as a requirement for creating new generations
+- expiration date = current time + refresh rate
+- expirationPeriod - to be random
