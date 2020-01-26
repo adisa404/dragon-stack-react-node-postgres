@@ -1,0 +1,18 @@
+[
+  {
+    "traitType": "backgroundColor",
+    "traitValues": ["black", "white", "blue", "green"]
+  },
+  {
+    "traitType": "pattern",
+    "traitValues": ["plain", "stripe", "dotted", "patchy"]
+  },
+  {
+    "traitType": "build",
+    "traitValues": ["stocky", "slender", "sporty", "skinny"]
+  },
+  {
+    "traitType": "size",
+    "traitValues": ["small", "medium", "large", "enormous"]
+  }
+]

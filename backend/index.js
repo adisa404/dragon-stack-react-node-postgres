@@ -15,3 +15,10 @@ setTimeout(() => {
   const dragon3 = new Dragon();
   console.log(dragon3);
 }, 3000);
+
+// test dragon with traits
+const dragonWithTraits = new Dragon({
+  traits: { traitType: 'mood', traitValue: 'happy' },
+});
+
+console.log(dragonWithTraits);

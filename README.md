@@ -22,3 +22,32 @@ constructor(({ birthDate, nickname } = {}));
   WE build a getter
   get birthdate()
   and every time .birthdate is called the date is created in the right place.
+
+  ## environment settings - install nodemon
+
+  npm i nodemon --save-dev
+
+  --save-dev // to save nodemon as a devlopment dependency
+  https://stackoverflow.com/questions/22891211/what-is-the-difference-between-save-and-save-dev
+
+  ## environment settings - edit package.json
+
+  ```json
+    "scripts": {
+    "start": "node .", // to start index.js
+    "dev": "nodemon ." // to start nodemon
+  },
+  ```
+
+npm run start
+npm run dev // will watch the changes
+
+# setTimeout
+
+- ne zadrzava program nego zaustavlja odedjen block, slijedeca linija odmah dalje radi
+
+# dragon properties - called traits
+
+type of properties
+type: backgroundColor:
+value: aray of background colors
