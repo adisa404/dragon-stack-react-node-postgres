@@ -63,3 +63,10 @@ value: aray of background colors
 - expiration date = current time + refresh rate
 - expirationPeriod - to be random
 - create newDragon only if expiration larger than currentDateTime
+
+# generation engine class
+
+Create a Generation Engine. Do so with a class called GenerationEngine. The engine will need to create a new generation object when the previous one has expired.
+
+newGeneration() will reqursivley call itself when a generation has expired
+use timer to stop
