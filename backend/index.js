@@ -1,24 +1,13 @@
-const Dragon = require('./dragon');
+const Generation = require('./generation');
 
-console.log('entry point');
-const dragon = new Dragon({
-  birthDate: new Date(),
-  nickname: 'Disa',
-});
+const generation = new Generation();
+console.log('generation:', generation);
 
-const dragon2 = new Dragon();
+const disa = generation.newDragon('DISA');
+console.log('dragon disa created:', disa);
 
-console.log(dragon);
-console.log(dragon2);
-
+// test dragon with a delayed creation
 setTimeout(() => {
-  const dragon3 = new Dragon();
-  console.log(dragon3);
-}, 3000);
-
-// test dragon with traits
-const dragonWithTraits = new Dragon({
-  traits: { traitType: 'mood', traitValue: 'happy' },
-});
-
-console.log(dragonWithTraits);
+  const cano = generation.newDragon('CANO');
+  console.log('dragon cano created:', cano);
+}, 15000);

@@ -5,6 +5,7 @@ const DEFAULT_PROPERTIES = {
   get birthDate() {
     return new Date();
   },
+
   get randomTraits() {
     const traits = [];
 

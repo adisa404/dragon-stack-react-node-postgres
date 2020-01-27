@@ -62,3 +62,4 @@ value: aray of background colors
 - set expiration date, but not as a requirement for creating new generations
 - expiration date = current time + refresh rate
 - expirationPeriod - to be random
+- create newDragon only if expiration larger than currentDateTime
