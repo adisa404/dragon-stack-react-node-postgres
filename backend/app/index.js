@@ -15,15 +15,16 @@
 //###########
 const express = require('express');
 const GenerationEngine = require('./generation/engine');
+const dragonRouter = require('./api/dragon');
+const generationRouter = require('./api/generation');
 
 const engine = new GenerationEngine();
 const app = express();
 
+app.use('/dragon', dragonRouter);
+app.use('/generation', generationRouter);
+app.locals.engine = engine;
 engine.start();
 // setTimeout(() => engine.stop(), 20000);
-
-app.get('/dragon/new', (req, res) => {
-  res.json({ dragon: engine.generation.newDragon() });
-});
 
 module.exports = app;

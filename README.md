@@ -101,3 +101,20 @@ app/
 
 bin/ - had issues with bin folder, left this file in root.
 server.js
+
+# GET request for single generation
+
+# fix circular dependancy issues with express
+
+register engine in:
+
+```js
+app.locals.engine = engine; // now the engine instance is publicly available
+```
+
+/api/dragon.js
+/api/generation.js
+
+//TEST
+http://localhost:3003/dragon/new
+http://localhost:3003/generation/
