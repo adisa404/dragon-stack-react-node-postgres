@@ -85,3 +85,19 @@ http://localhost:3003/dragon/new
 
 - create server.js
 - export const app = express(); and use in index.js
+
+# folder structure
+
+app/
+-index.js
+-config.js
+-dragon.js
+-engine.js // bound to generation... new folder
+-generation.js // in new generation folder rename to index.js
+// changed generation.js to index.js. bc when referencing the folder that is the default file
+
+/data
+-traits.json
+
+bin/ - had issues with bin folder, left this file in root.
+server.js

@@ -1,4 +1,4 @@
-const TRAITS = require('./traits.json');
+const TRAITS = require('../data/traits.json');
 const _ = require('lodash');
 
 const DEFAULT_PROPERTIES = {

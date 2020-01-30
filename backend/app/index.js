@@ -14,11 +14,10 @@
 
 //###########
 const express = require('express');
-const GenerationEngine = require('./engine');
+const GenerationEngine = require('./generation/engine');
 
-const app = express();
 const engine = new GenerationEngine();
-const port = 3003;
+const app = express();
 
 engine.start();
 // setTimeout(() => engine.stop(), 20000);
@@ -27,4 +26,4 @@ app.get('/dragon/new', (req, res) => {
   res.json({ dragon: engine.generation.newDragon() });
 });
 
-app.listen(port, () => `listening on port ${port}`);
+module.exports = app;
