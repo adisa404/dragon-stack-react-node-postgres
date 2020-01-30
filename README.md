@@ -75,6 +75,13 @@ use timer to stop
 
 npm i express
 
-start server with app.listen()
+start server with app.listen() //3003
+
+app.get('/dragon/new', (req, res) ...
 
 http://localhost:3003/dragon/new
+
+# create a start for our app in server.js
+
+- create server.js
+- export const app = express(); and use in index.js
