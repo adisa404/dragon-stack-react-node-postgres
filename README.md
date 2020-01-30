@@ -70,3 +70,11 @@ Create a Generation Engine. Do so with a class called GenerationEngine. The engi
 
 newGeneration() will reqursivley call itself when a generation has expired
 use timer to stop
+
+# creating a webserver with express.js
+
+npm i express
+
+start server with app.listen()
+
+http://localhost:3003/dragon/new
