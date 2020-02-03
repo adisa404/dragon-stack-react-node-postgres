@@ -179,3 +179,32 @@ SELECT \* FROM pg_user;
 in the list of users we should see the node_user
 
 - kod njega ctrl D prouzrokuje \q (da izadje iz sql mode). Treba prvjeriti jel kod mene tako
+
+# create generation.sql
+
+data/db/sql/generation.sql
+
+```SQL
+CREATE TABLE generation(
+	id         INTEGER PRIMARY KEY, /* it is better to have the SERIAL data type - in order for the id to be incremented */
+	expiration TIMESTAMP NOT NULL /* add NOT NULL to prevent blank entries */
+);
+```
+
+we will create an accociation with the generation table by adding the generatiionId
+in order to be able to use the camel case in generationId we can surround it by double qotes.
+
+I decided aganst that, since strings in sql ar a code smell
+
+so generationid it is
+
+FOREIGN KEY will allow us to uniquely identfy a column in another table
+will be able to do that with identifying a unique key which is the primary key af another table (generation table)
+REFERENCES generation(id) // provide schema to be referenced
+
+a dragon can have only 1 generation
+but 2 or more dragons can spacify the same generation as their generation id
+
+there is a 1:M relationship between generations and dragons
+
+later on if we want to pull a data about a dragon, we will be quickly able to pull the data of the accociated generation
