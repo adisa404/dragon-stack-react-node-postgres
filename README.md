@@ -118,3 +118,64 @@ app.locals.engine = engine; // now the engine instance is publicly available
 //TEST
 http://localhost:3003/dragon/new
 http://localhost:3003/generation/
+
+# Install PostgreSQL
+
+- Download instllation app from https://postgresapp.com/
+- Move downloaded package to Applications
+- Open package in applications
+- Click on initialite. In settings make sure the default port is 5432
+- In terminal run:
+  psql --help
+  psql -U postgres// tun the shell as the postgres user// this user is set by default
+
+# create dragonstack db
+
+createdb -U postgres dragonstackdb;
+// only works in shell
+\$ + command;
+End command with semicolon, otherwise the terminal waits for farther input
+
+# connect to dragonstack db
+
+psql -U postgres dragonstackdb
+// this is in sql mode
+
+# list all dbs
+
+psql \l
+// works in sql mode
+
+# get out of db mode
+
+\q
+// works in sql mode
+
+# db mode
+
+we write sql here
+lowercase also wroks
+
+CREATE DATABASE test;
+
+## PostgreSQL clients
+
+DataGrip from Jetbrains  
+Postico only for Mac users
+
+# create user
+
+CREATE USER node_user WITH SUPERUSER PASSWORD 'node_password';
++E:
+CREATE ROLE
+
+// works in sql mode
+// where node_password is the our new password
+// access and privilages --> WITH SUPERUSER
+
+To confirm that this user exists we can run a select statement:
+SELECT \* FROM pg_user;
+
+in the list of users we should see the node_user
+
+- kod njega ctrl D prouzrokuje \q (da izadje iz sql mode). Treba prvjeriti jel kod mene tako
