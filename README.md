@@ -232,3 +232,45 @@ chmod +x path_to_file
 chmod +x ./data/db/config/configure_db.sh
 +E
 -rwxr-xr-x 1 adisamrvoljak staff 271 3 Feb 16:02 ./data/db/config/configure_db.sh
+
+# show overview
+
+## command \d
+
+                 List of relations
+
+Schema | Name | Type | Owner  
+--------+-------------------+----------+-----------
+public | dragon | table | node_user
+public | dragon_id_seq | sequence | node_user
+public | generation | table | node_user
+public | generation_id_seq | sequence | node_user
+(4 rows)
+
+## command \d dragon
+
+                                         Table "public.dragon"
+    Column    |            Type             | Collation | Nullable |              Default
+
+--------------+-----------------------------+-----------+----------+------------------------------------
+id | integer | | not null | nextval('dragon_id_seq'::regclass)
+birthdate | timestamp without time zone | | not null |
+nickname | character varying(64) | | |
+generationid | integer | | |
+Indexes:
+"dragon_pkey" PRIMARY KEY, btree (id)
+Foreign-key constraints:
+"dragon_generationid_fkey" FOREIGN KEY (generationid) REFERENCES generation(id)
+
+## command \d generation
+
+                                        Table "public.generation"
+
+Column | Type | Collation | Nullable | Default  
+------------+-----------------------------+-----------+----------+----------------------------------------
+id | integer | | not null | nextval('generation_id_seq'::regclass)
+expiration | timestamp without time zone | | not null |
+Indexes:
+"generation_pkey" PRIMARY KEY, btree (id)
+Referenced by:
+TABLE "dragon" CONSTRAINT "dragon_generationid_fkey" FOREIGN KEY (generationid) REFERENCES generation(id)
