@@ -274,3 +274,47 @@ Indexes:
 "generation_pkey" PRIMARY KEY, btree (id)
 Referenced by:
 TABLE "dragon" CONSTRAINT "dragon_generationid_fkey" FOREIGN KEY (generationid) REFERENCES generation(id)
+
+# connect db and express - install
+
+npm i pg --save
+
+# ceate the database pool
+
+create /backend/databasePool.js
+
+```js
+const { Pool } = require('pg'); // is going to be our primary way working with the postgres instance
+const pool = new Pool(); // used for CRUD
+// we need to provide database props to the Pool()
+
+// credentials etc needs to be provided in form of an object
+```
+
+```js
+const databaseConfiguration = {
+  user: 'db username',
+  host: 'localhost',
+  database: 'dagonstackdb',
+  password: 'db password',
+  port: 5432,
+};
+```
+
+# create secrets folder
+
+- to hide sensitive information
+
+backend/secrets/databaseConfiguration.js
+
+```js
+module.exports = {
+  user: 'db username',
+  host: 'localhost',
+  database: 'dagonstackdb',
+  password: 'db password',
+  port: 5432,
+};
+```
+
+# pool.query() - pass stored procedures
