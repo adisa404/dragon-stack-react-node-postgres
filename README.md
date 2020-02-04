@@ -208,3 +208,27 @@ but 2 or more dragons can spacify the same generation as their generation id
 there is a 1:M relationship between generations and dragons
 
 later on if we want to pull a data about a dragon, we will be quickly able to pull the data of the accociated generation
+
+# add clean up script
+
+add new file data/db/config/configure_db.sh
+
+psql -U node_user dragonstackdb < ./data/db/sql/generation.sql // use < this sign to run the sql script in the node_user dragonstackdb environment
+
+edit package.json
+add configure task
+
+npm run configure
+
+# issues
+
+issues when running configure command bc of permissions
+run
+ls -l //in data/db/config
+you will see that the file has only read and write permissions but not the executable x permisson
+
+to add executable permission we use the change mode command:
+chmod +x path_to_file
+chmod +x ./data/db/config/configure_db.sh
++E
+-rwxr-xr-x 1 adisamrvoljak staff 271 3 Feb 16:02 ./data/db/config/configure_db.sh
