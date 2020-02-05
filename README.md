@@ -330,3 +330,26 @@ pool.query('SELECT * FROM generation', (error, response) => {
   console.log('response.row', response.rows);
 });
 ```
+
+# create repository.js for generation
+
+everytime a new generation is created it needs to be saved to the db
+
+/generation/repository.js
+require databasePool.js
+
+saveGeneration()
+
+```SQL
+INSERT INTO table_name (column1, column2, column3, ...)
+VALUES (value1, value2, value3, ...);
+```
+
+VALUES (value1, value2, value3, ...);// expects an array. Insetad of string interpolation psql has it's own syntax,
+which is not zero based
+
+```js
+'VALUES ($1)';
+```
+
+npm run configure && npm run dev

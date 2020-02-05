@@ -1,4 +1,5 @@
 const Generation = require('./index');
+const GenerationRepository = require('./repository');
 
 class GenerationEngine {
   constructor() {
@@ -17,6 +18,7 @@ class GenerationEngine {
 
   newGeneration() {
     this.generation = new Generation();
+    GenerationRepository.saveGeneration(this.generation);
 
     console.log('new generation:', this.generation);
 
