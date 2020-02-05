@@ -318,3 +318,15 @@ module.exports = {
 ```
 
 # pool.query() - pass stored procedures
+
+Often we only need to run a single query on the database,
+so as convenience the pool has a method to run a query on the first available idle client and return its result.
+
+use pool.query() to check if a request to the generation table is going to be a success, even if we don't have data yet
+
+```js
+pool.query('SELECT * FROM generation', (error, response) => {
+  if (error) return console.log('error');
+  console.log('response.row', response.rows);
+});
+```
