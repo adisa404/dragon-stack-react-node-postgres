@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node ./server",
     "dev": "nodemon ./server",
-    "configure": "./data/db/config/configure_db.sh"
+    "configure": "./data/db/config/configure_db.sh",
+    "configure-dev": "npm run configure && npm run dev"
   },
   "author": "",
   "license": "ISC",
