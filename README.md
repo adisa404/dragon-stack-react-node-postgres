@@ -395,3 +395,42 @@ select \* from generation // check if all generations are created
 ---
 
 generationId nije u db u generation table. Ova informacija je u objektu ali ne u db (sto se vidi iz gore jsona)
+
+# add generationId to the dragon model
+
+add a `generationId` field to the constructor for the dragon model (dragon/index.js). Then make sure every dragon has a `this.generationId` value.
+
+in newDragon method pass the generationId
+
+test
+localhost:3003/generation/new
+
+==>
+
+```json
+{
+  "dragon": {
+    "birthDate": "2020-02-09T18:16:11.356Z",
+    "nickname": "unnamed",
+    "traits": [
+      {
+        "traitType": "backgroundColor",
+        "traitValue": "green"
+      },
+      {
+        "traitType": "pattern",
+        "traitValue": "patchy"
+      },
+      {
+        "traitType": "build",
+        "traitValue": "skinny"
+      },
+      {
+        "traitType": "size",
+        "traitValue": "enormous"
+      }
+    ],
+    "generationId": 226 // in dragon
+  }
+}
+```
