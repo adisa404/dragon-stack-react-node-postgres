@@ -353,3 +353,24 @@ which is not zero based
 ```
 
 npm run configure && npm run dev
+
+# generation model
+
+our model does not have an id yet
+instead of calculting the id, we tak ethe id from the response
+
+```sql
+INSERT INTO generation(expiration) VALUES($1) RETURNING id
+```
+
+in order to save the generation and get the id at the same rinme we ca use Promises
+
+Save generationId
+
+```js
+GenerationRepository.saveGeneration(this.generation)
+  .then(({ generationId }) => {
+    this.generation.generationId = generationId;
+  })
+  .catch(error => console.log(error));
+```

@@ -18,7 +18,11 @@ class GenerationEngine {
 
   newGeneration() {
     this.generation = new Generation();
-    GenerationRepository.saveGeneration(this.generation);
+    GenerationRepository.saveGeneration(this.generation)
+      .then(({ generationId }) => {
+        this.generation.generationId = generationId;
+      })
+      .catch(error => console.log(error));
 
     console.log('new generation:', this.generation);
 
