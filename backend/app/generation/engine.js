@@ -17,18 +17,20 @@ class GenerationEngine {
   }
 
   newGeneration() {
-    this.generation = new Generation();
-    GenerationRepository.saveGeneration(this.generation)
+    const generation = new Generation();
+    GenerationRepository.saveGeneration(generation)
       .then(({ generationId }) => {
+        this.generation = generation;
+
         this.generation.generationId = generationId;
+
+        console.log('new generation:', this.generation);
+
+        this.timer = setTimeout(() => {
+          this.newGeneration();
+        }, this.generation.expiration.getTime() - Date.now());
       })
       .catch(error => console.log(error));
-
-    console.log('new generation:', this.generation);
-
-    this.timer = setTimeout(() => {
-      this.newGeneration();
-    }, this.generation.expiration.getTime() - Date.now());
   }
 }
 

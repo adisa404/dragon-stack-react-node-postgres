@@ -8,7 +8,7 @@ class GenerationRepository {
         [generation.expiration],
         (error, response) => {
           if (error) return reject('error');
-          const generationId = response.rown[0].id;
+          const generationId = response.rows[0].id;
 
           resolve({ generationId });
         },

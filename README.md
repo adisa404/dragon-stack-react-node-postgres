@@ -374,3 +374,24 @@ GenerationRepository.saveGeneration(this.generation)
   })
   .catch(error => console.log(error));
 ```
+
+test
+localhost:3003/generation -> shows current generation
+
+```json
+{
+  "generation": {
+    "expirationPeriod": 1631,
+    "msUntilExpiration": 3369,
+    "expiration": "2020-02-09T16:13:46.183Z",
+    "generationId": 32
+  }
+}
+```
+
+psql -U node_user dragonstackdb;
+select \* from generation // check if all generations are created
+
+---
+
+generationId nije u db u generation table. Ova informacija je u objektu ali ne u db (sto se vidi iz gore jsona)
