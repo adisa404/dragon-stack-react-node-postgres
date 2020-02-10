@@ -403,7 +403,7 @@ add a `generationId` field to the constructor for the dragon model (dragon/index
 in newDragon method pass the generationId
 
 test
-localhost:3003/generation/new
+localhost:3003/dragon/new
 
 ==>
 
@@ -448,3 +448,23 @@ in promise .then({dragonId}); contains the resolved value
 
 test
 localhost:3003/dragon/new
+
+# error handling in express
+
+we use error handling instead of console logging to get real responses. We first configure
+
+```js
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  res.status(statusCode).json({ type: 'error', message: err.message });
+});
+```
+
+Error
+
+```json
+{
+  "type": "error",
+  "message": "Cannot read property 'newDragon' of null"
+}
+```

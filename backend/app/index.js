@@ -24,6 +24,12 @@ const app = express();
 app.use('/dragon', dragonRouter);
 app.use('/generation', generationRouter);
 app.locals.engine = engine;
+
+app.use((err, req, res, next) => {
+  const statusCode = err.statusCode || 500;
+  res.status(statusCode).json({ type: 'error', message: err.message });
+});
+
 engine.start();
 // setTimeout(() => engine.stop(), 20000);
 
