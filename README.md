@@ -434,3 +434,17 @@ localhost:3003/generation/new
   }
 }
 ```
+
+autosuggest
+https://tabnine.com/
+
+# store dragons to db
+
+The new `saveDragon` function should be in a relevant DragonRepository class, and take a dragon object. Don’t worry about storing the dragon traits array just yet. That’s more advanced. Only worry about the other dragon properties for now.
+
+in promise .then({dragonId}); contains the resolved value
+
+.catch(error => console.log(error));
+
+test
+localhost:3003/dragon/new
