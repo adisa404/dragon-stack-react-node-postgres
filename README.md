@@ -486,3 +486,11 @@ npm react react-dom
 
 dev-dependencies
 npm i babel-preset-env@1.6.1 babel-preset-react@6.24.1 babel-plugin-transform-class-properties@6.24.1 --save-dev
+
+---
+
+my commands
+npx create-react-app frontend
+npm i babel-preset-env babel-preset-react babel-plugin-transform-class-properties --save-dev
+
+install emmet extension
