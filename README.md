@@ -468,3 +468,21 @@ Error
   "message": "Cannot read property 'newDragon' of null"
 }
 ```
+
+# global installations
+
+sudo npm i -g webpack
+
+# frontend folder
+
+mkdir frontend
+ne moramo mi instalirati webpack
+
+You’ll need to have Node >= 8.10 and npm >= 5.6 on your machine. To create a project, run:
+npx create-react-app my-app
+
+dependencies
+npm react react-dom
+
+dev-dependencies
+npm i babel-preset-env@1.6.1 babel-preset-react@6.24.1 babel-plugin-transform-class-properties@6.24.1 --save-dev
