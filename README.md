@@ -513,3 +513,10 @@ fetch() - pass url
 ## componentDidMount
 
 in order to fire fetch() we call it in componentDidMount
+
+# CORS - issue with fetching backend data
+
+- cd backend
+- npm i cors
+
+we will use the cors package in the express app
