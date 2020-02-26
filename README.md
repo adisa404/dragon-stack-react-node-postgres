@@ -505,3 +505,11 @@ install emmet extension
 putting the this.state in the constructor is the quivalent to state = ...
 
 state = { generation: { id: 1, expiration: '2025-10-10' } };
+
+## get generation data from backend
+
+fetch() - pass url
+
+## componentDidMount
+
+in order to fire fetch() we call it in componentDidMount
