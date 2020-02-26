@@ -494,3 +494,8 @@ npx create-react-app frontend
 npm i babel-preset-env babel-preset-react babel-plugin-transform-class-properties --save-dev
 
 install emmet extension
+
+# generation component
+
+- display ID
+- expiration
