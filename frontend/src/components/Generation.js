@@ -1,13 +1,15 @@
 import React, { Component } from 'react';
-const generation = { id: 1, expiration: '2025-10-10' };
+
 class Generation extends Component {
-  state = {};
+  state = { generation: { id: 1, expiration: '2025-10-10' } };
 
   render() {
     return (
       <div>
-        <h3>Generation with ID: {generation.id}</h3>
-        <h4>expires at {new Date(generation.expiration).toString()}</h4>
+        <h3>Generation with ID: {this.state.generation.id}</h3>
+        <h4>
+          expires at {new Date(this.state.generation.expiration).toString()}
+        </h4>
       </div>
     );
   }

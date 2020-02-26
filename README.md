@@ -499,3 +499,9 @@ install emmet extension
 
 - display ID
 - expiration
+
+## state
+
+putting the this.state in the constructor is the quivalent to state = ...
+
+state = { generation: { id: 1, expiration: '2025-10-10' } };
