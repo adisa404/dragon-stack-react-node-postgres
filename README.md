@@ -519,4 +519,8 @@ in order to fire fetch() we call it in componentDidMount
 - cd backend
 - npm i cors
 
-we will use the cors package in the express app
+we will use the cors package in the express app. We tell the backend app to use the cors middleware.
+
+# reponse
+
+use response.json() to extract data

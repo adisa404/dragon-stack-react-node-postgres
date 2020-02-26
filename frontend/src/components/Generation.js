@@ -1,12 +1,15 @@
 import React, { Component } from 'react';
 
+const DEFAULT_GENERATION = { generationId: '', expiration: '' };
+
 class Generation extends Component {
-  state = { generation: { id: 1, expiration: '2025-10-10' } };
+  state = { generation: DEFAULT_GENERATION };
 
   fetchGeneration() {
-    fetch('http://localhost:3003/generation').then(response =>
-      console.log('response', response),
-    );
+    fetch('http://localhost:3003/generation')
+      .then(response => response.json())
+      .then(json => this.setState({ generation: json.generation }))
+      .catch(error => console.log(error));
   }
 
   componentDidMount() {
@@ -15,7 +18,7 @@ class Generation extends Component {
   render() {
     return (
       <div>
-        <h3>Generation with ID: {this.state.generation.id}</h3>
+        <h3>Generation with ID: {this.state.generation.generationId}</h3>
         <h4>
           expires at {new Date(this.state.generation.expiration).toString()}
         </h4>
