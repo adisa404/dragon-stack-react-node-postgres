@@ -5,12 +5,18 @@ const DEFAULT_GENERATION = { generationId: '', expiration: '' };
 class Generation extends Component {
   state = { generation: DEFAULT_GENERATION };
 
-  fetchGeneration() {
+  fetchGeneration = () => {
     fetch('http://localhost:3003/generation')
       .then(response => response.json())
       .then(json => this.setState({ generation: json.generation }))
       .catch(error => console.log(error));
-  }
+  };
+
+  fetchNextGeneration = () => {
+    this.fetchGeneration();
+
+    setTimeout(() => this.fetchNextGeneration(), 1000);
+  };
 
   componentDidMount() {
     this.fetchGeneration();

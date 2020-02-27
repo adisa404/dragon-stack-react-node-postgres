@@ -524,3 +524,7 @@ we will use the cors package in the express app. We tell the backend app to use 
 # reponse
 
 use response.json() to extract data
+
+# fetch next generation
+
+- using the existing method fetchGeneration() and calling i fetchNextGeneration() recursivley
