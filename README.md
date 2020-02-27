@@ -527,4 +527,6 @@ use response.json() to extract data
 
 # fetch next generation
 
-- using the existing method fetchGeneration() and calling i fetchNextGeneration() recursivley
+- using the existing method fetchGeneration() and calling fetchNextGeneration() recursivley
+- next generation is calculated differentley in the backend so we caluclate the delay with the
+  help of the expiration
