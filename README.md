@@ -530,3 +530,8 @@ use response.json() to extract data
 - using the existing method fetchGeneration() and calling fetchNextGeneration() recursivley
 - next generation is calculated differentley in the backend so we caluclate the delay with the
   help of the expiration
+
+# componentWillUnmount
+
+- place to get rid of timers
+  we can use clearTimeout(); or reference a certain timeout
