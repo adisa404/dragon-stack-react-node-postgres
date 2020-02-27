@@ -535,3 +535,7 @@ use response.json() to extract data
 
 - place to get rid of timers
   we can use clearTimeout(); or reference a certain timeout
+
+# create component for creating a new dragon
+
+- fetch dragon in componentDidMount via fetch()

@@ -1,12 +1,15 @@
 import React from 'react';
 import './App.css';
 import Generation from './components/Generation';
+import NewDragon from './components/NewDragon';
 
 function App() {
   return (
     <div className="App">
-      <p>test</p>
+      <p>Generation Component</p>
       <Generation />
+      <p>New Dragon Component</p>
+      <NewDragon />
     </div>
   );
 }
