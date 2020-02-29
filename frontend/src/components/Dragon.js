@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import DragonAvatar from './DragonAvatar';
 
 const DEFAULT_DRAGON = {
   dragonId: '',
@@ -7,7 +8,8 @@ const DEFAULT_DRAGON = {
   traits: [],
   nickname: 'nickname',
 };
-class NewDragon extends Component {
+
+class Dragon extends Component {
   state = { dragon: DEFAULT_DRAGON };
 
   fetchNewDragon = () => {
@@ -27,25 +29,8 @@ class NewDragon extends Component {
   }
 
   render() {
-    const {
-      dragonId,
-      nickname,
-      birthDate,
-      generationId,
-      traits,
-    } = this.state.dragon;
-
-    console.log('traits in render', traits);
-    return (
-      <div>
-        <p>{dragonId}</p>
-        <p>{nickname}</p>
-        <p>{birthDate}</p>
-        {this.state.dragon.traits.map(trait => trait.traitValue).join(', ')}
-        <p>{generationId}</p>
-      </div>
-    );
+    return <DragonAvatar dragon={this.state.dragon} />;
   }
 }
 
-export default NewDragon;
+export default Dragon;

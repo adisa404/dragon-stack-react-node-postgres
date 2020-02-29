@@ -538,4 +538,13 @@ use response.json() to extract data
 
 # create component for creating a new dragon
 
+# Dragon component
+
 - fetch dragon in componentDidMount via fetch()
+
+# create component for the avatar od dragons
+
+# Dragon Avatar component
+
+- sepatare the fetching of dragon data of the presentational layer of the dragon
+- display dragon in the avatar component
