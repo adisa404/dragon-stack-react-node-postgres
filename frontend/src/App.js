@@ -1,7 +1,7 @@
 import React from 'react';
 import './App.css';
 import Generation from './components/Generation';
-import NewDragon from './components/NewDragon';
+import Dragon from './components/Dragon';
 
 function App() {
   return (
@@ -9,7 +9,7 @@ function App() {
       <p>Generation Component</p>
       <Generation />
       <p>New Dragon Component</p>
-      <NewDragon />
+      <Dragon />
     </div>
   );
 }
