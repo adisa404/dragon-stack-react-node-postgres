@@ -548,3 +548,7 @@ use response.json() to extract data
 
 - sepatare the fetching of dragon data of the presentational layer of the dragon
 - display dragon in the avatar component
+
+# button styling
+
+- npm i react-bootstrap
