@@ -552,3 +552,46 @@ use response.json() to extract data
 # button styling
 
 - npm i react-bootstrap
+
+# redux
+
+- is a state container for the entire app
+
+## redux store
+
+- manages the state data of the entire app
+- single source of truth
+- unidirectional flow of data. The root is the store and then the data flows down to child components.
+  Then the components update and rerender as soon as they see that the store has changed.
+
+a few concepts make these unidirectional flow of data possible:
+
+### actions
+
+- they primiarily act like data types
+- are defined as objects with a type field that is globally unique
+
+### reducers
+
+- describe sections of the store.
+- they split the store.
+- the respond to a different types of actions and update their specific section of the store as a result
+
+npm i redux --save
+
+- create store
+  import {createStore} from 'redux';
+- create a reducer
+
+a store always needs a reducer
+
+we pass the reducer to the store
+
+const DEFAULT_GENERATION = { generationId: '', expiration: '' };
+const generationReducer = () => {
+return { generation: DEFAULT_GENERATION };
+};
+
+const store = createStore(generationReducer);
+console.log('store', store);
+console.log('store.getState()', store.getState());
