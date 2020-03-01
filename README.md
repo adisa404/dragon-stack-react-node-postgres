@@ -587,11 +587,36 @@ a store always needs a reducer
 
 we pass the reducer to the store
 
+```js
 const DEFAULT_GENERATION = { generationId: '', expiration: '' };
-const generationReducer = () => {
-return { generation: DEFAULT_GENERATION };
+const generationReducer = (state, action) => {
+  console.log('generationReducer.state', state);
+  console.log('generationReducer.action', action); //store.dispatch({ test: '' });
+
+  if (action.type === 'GENERATION_ACTION_TYPE') {
+    return { generation: action.generation };
+  }
+  return { generation: DEFAULT_GENERATION };
 };
 
 const store = createStore(generationReducer);
 console.log('store', store);
 console.log('store.getState()', store.getState());
+```
+
+### actions
+
+store.dispatch()
+
+- pass actions to dispatch
+- by doing so we send the action to the individual reducers
+
+```js
+store.dispatch({
+  type: 'GENERATION_ACTION_TYPE',
+  generation: {
+    generationId: 'test1',
+    expiration: 'test2',
+  },
+});
+```
