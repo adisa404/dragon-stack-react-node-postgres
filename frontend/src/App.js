@@ -6,7 +6,10 @@ import Dragon from './components/Dragon';
 import { generationReducer } from './reducers/index';
 import { generationActionCreator } from './actions/generation';
 
-const store = createStore(generationReducer);
+const store = createStore(
+  generationReducer,
+  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(),
+);
 
 store.subscribe(() => console.log('store state update', store.getState()));
 
