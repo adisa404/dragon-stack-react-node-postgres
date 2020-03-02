@@ -18,7 +18,6 @@ class Dragon extends Component {
       .then(response => response.json())
       .then(json => {
         console.log('json', json);
-        console.log('json.dragon', json.dragon);
         this.setState({ dragon: json.dragon });
       })
       .catch(error => console.log(error));
@@ -26,7 +25,6 @@ class Dragon extends Component {
 
   componentDidMount() {
     this.fetchNewDragon();
-    console.log('traits', this.state.dragon.traits);
   }
 
   render() {

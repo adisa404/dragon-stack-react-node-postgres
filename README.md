@@ -620,3 +620,10 @@ store.dispatch({
   },
 });
 ```
+
+### action creator
+
+- is wrapper around the action object
+- the subscribe call needs to be placed before our actions are dispatched
+
+naci shortcut za console.log
