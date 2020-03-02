@@ -643,3 +643,10 @@ const exampleAction = generationActionCreator({
 
 store.dispatch(exampleAction);
 ```
+
+# folder structure
+
+/src/actions/types.js
+/src/actions/generation.js
+
+/src/reducers/index.js
