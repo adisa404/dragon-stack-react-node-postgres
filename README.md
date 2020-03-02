@@ -627,3 +627,19 @@ store.dispatch({
 - the subscribe call needs to be placed before our actions are dispatched
 
 naci shortcut za console.log
+
+```js
+const generationActionCreator = payload => {
+  return {
+    type: GENERATION_ACTION_TYPE,
+    generation: payload,
+  };
+};
+
+const exampleAction = generationActionCreator({
+  generationId: 'testExample',
+  expiration: 'testExampleExp',
+});
+
+store.dispatch(exampleAction);
+```

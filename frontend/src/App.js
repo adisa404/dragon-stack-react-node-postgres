@@ -8,8 +8,8 @@ const DEFAULT_GENERATION = { generationId: '', expiration: '' };
 const GENERATION_ACTION_TYPE = 'GENERATION_ACTION_TYPE';
 
 const generationReducer = (state, action) => {
-  console.log('generationReducer.state', state);
-  console.log('generationReducer.action', action); //store.dispatch({ test: '' });
+  //console.log('generationReducer.state', state);
+  //console.log('generationReducer.action', action); //store.dispatch({ test: '' });
 
   if (action.type === GENERATION_ACTION_TYPE) {
     return { generation: action.generation };
@@ -26,7 +26,6 @@ console.log('store.getState()', store.getState());
 store.subscribe(() => console.log('store state update', store.getState()));
 console.log('store', store);
 
-store.dispatch({ type: 'test' });
 store.dispatch({
   type: GENERATION_ACTION_TYPE,
   generation: {
@@ -44,19 +43,21 @@ const generationActionCreator = payload => {
   };
 };
 
-const exampleAction = generationActionCreator({
-  generationId: 'testExample',
-  expiration: 'testExampleExp',
-});
+//########
+fetch('http://localhost:3003/generation')
+  .then(response => response.json())
+  .then(json => {
+    store.dispatch(generationActionCreator(json.generation));
+  });
 
-store.dispatch(exampleAction);
+console.log('###### fetch + action creator store.getState()', store.getState());
 
 function App() {
   return (
     <div className="App">
       <p>Generation Component</p>
       <Generation />
-      <p>New Dragon Component</p>
+      <p>Dragon Component</p>
       <Dragon />
     </div>
   );

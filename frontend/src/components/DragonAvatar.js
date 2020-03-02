@@ -11,7 +11,6 @@ class DragonAvatar extends Component {
       traits,
     } = this.props.dragon;
 
-    console.log('traits in render', traits);
     return (
       <div>
         <p>{dragonId}</p>

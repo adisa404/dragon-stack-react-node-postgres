@@ -30,7 +30,7 @@ class Dragon extends Component {
   render() {
     return (
       <div>
-        <Button onClick={this.fetchNewDragon}>New Dragon</Button>
+        <Button onClick={this.fetchNewDragon}>Create New Dragon</Button>
         <DragonAvatar dragon={this.state.dragon} />
       </div>
     );
