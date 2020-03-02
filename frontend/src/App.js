@@ -1,5 +1,6 @@
 import React from 'react';
 import { createStore } from 'redux';
+import { Provider } from 'react-redux';
 import './App.css';
 import Generation from './components/Generation';
 import Dragon from './components/Dragon';
@@ -22,12 +23,14 @@ fetch('http://localhost:3003/generation')
 
 function App() {
   return (
-    <div className="App">
-      <p>Generation Component</p>
-      <Generation />
-      <p>Dragon Component</p>
-      <Dragon />
-    </div>
+    <Provider store={store}>
+      <div className="App">
+        <p>Generation Component</p>
+        <Generation />
+        <p>Dragon Component</p>
+        <Dragon />
+      </div>
+    </Provider>
   );
 }
 

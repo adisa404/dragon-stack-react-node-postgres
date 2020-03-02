@@ -650,3 +650,50 @@ store.dispatch(exampleAction);
 /src/actions/generation.js
 
 /src/reducers/index.js
+
+# install react-redux
+
+npm i react-redux
+
+```js
+import { Provider } from 'react-dedux';
+```
+
+html
+wrap out html into the Provider Tag
+
+```jsx
+<Provider store={store}>
+  <div className="App">
+    <p>Generation Component</p>
+    <Generation />
+    <p>Dragon Component</p>
+    <Dragon />
+  </div>
+</Provider>
+```
+
+Now every component will be able to acces the store from props.
+
+# redux - connect
+
+This will be possible with the connect function of redux
+
+import {connect} from 'react-redux';
+
+```js
+const componentConnector = connect(); // this component connector wraps around the component function itself
+export default componentConnector(Generation);
+```
+
+adding the mapStateToProps function we can access state in props
+
+```js
+const mapStateToProps = state => {
+  const generation = state.generation;
+
+  return generation;
+};
+const componentConnector = connect(mapStateToProps);
+export default componentConnector(Generation);
+```
