@@ -692,7 +692,7 @@ adding the mapStateToProps function we can access state in props
 const mapStateToProps = state => {
   const generation = state.generation;
 
-  return generation;
+  return { generation }; ///!!!!
 };
 const componentConnector = connect(mapStateToProps);
 export default componentConnector(Generation);

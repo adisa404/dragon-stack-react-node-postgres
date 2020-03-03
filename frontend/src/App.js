@@ -19,6 +19,7 @@ fetch('http://localhost:3003/generation')
   .then(response => response.json())
   .then(json => {
     store.dispatch(generationActionCreator(json.generation));
+    console.log('####### json.generation in fetch index', json.generation);
   });
 
 function App() {
